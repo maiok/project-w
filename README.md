@@ -1,7 +1,7 @@
 #### Start app locally
-* build dockerfile with environment and app
+* make start-app-local.sh executable
 ```bash
-docker build -t project-w-image .
+chmod +x start-app-local.sh
 ```
 
 #### SSH Commands
