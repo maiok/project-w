@@ -1,24 +1,43 @@
+## Localhost
+
+#### .env
+* in Docker directory make `.env` file from `env.local.example`
+* set personal access token for authentication to github packages
+
 #### Start app locally
-* make start-app-local.sh executable
+* make shell scripts executable
 ```bash
-chmod +x start-app-local.sh
+chmod +x docker/*.sh
+```
+* build app
+```bash
+cd docker && ./local-build-image.sh
+```
+* push app do github packages
+```bash
+cd docker && ./local-push-image.sh
+```
+* start app
+```bash
+cd docker && ./local-start-app.sh
 ```
 
-#### SSH Commands
-* change permission of the `.pem` file
+## AWS
+
+* make EC2 instance with Ubuntu
+* set key-pair to access with PEM file and download it into project
+* change permission of the `.pem` file (from AWS key-pair)
     ```bash
-    chmod 0400 .pem file path
+    chmod 0400 PEM_FILE
     ``` 
 * connect to remote server using ssh
-    ```bash
-    ssh ec2-user@public_ip
-    ```
     in case you choose `Ubuntu` os then
     ```bash
-    ssh -i PEM_FILE ubuntu@pubic_ip
+    ssh -i PEM_FILE ubuntu@public_ip
     ```
 
-#### Install Packages
+### Install Packages on AWS instance
+#### Docker
 * update the system
     ```bash
     sudo apt-get update

@@ -1,0 +1,15 @@
+version: '3.8'
+networks:
+    default:
+        name: network-${PROJECT_W_NAME}
+        driver: bridge
+services:
+    app:
+        container_name: ${PROJECT_W_NAME}
+        image: ${PROJECT_W_IMAGE_NAME}
+        restart: always
+        volumes:
+            - ../src:/usr/src/app/src
+            - ../run.py:/usr/src/app/run.py
+        ports:
+        - ${PROJECT_W_HOST_PORT}:5000
