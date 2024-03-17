@@ -4,7 +4,7 @@
 source .env
 
 printf "\nStop running services...\n"
-docker compose down
+docker compose --project-name ${PROJECT_W_NAME}-app down
 
 printf "\nBuild docker app...\n"
 ./local-build-image.sh

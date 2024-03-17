@@ -4,7 +4,7 @@
 source .env
 
 printf "\nStop running services...\n"
-docker compose down
+docker compose --project-name ${PROJECT_W_NAME}-app down
 
 printf "\nPrihlasujem sa do GitHub Packages...\n"
 echo ${GITHUB_PAT} | docker login ${GITHUB_PACKAGES_URL} -u ${GITHUB_USERNAME} --password-stdin
