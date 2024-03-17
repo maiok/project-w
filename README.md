@@ -1,10 +1,10 @@
 ## Localhost
 
-#### .env
+### .env
 * in Docker directory make `.env` file from `env.local.example`
 * set personal access token for authentication to github packages
 
-#### Start app locally
+### Start app locally
 * make shell scripts executable
 ```bash
 chmod +x docker/*.sh
@@ -20,6 +20,14 @@ cd docker && ./local-push-image.sh
 * start app
 ```bash
 cd docker && ./local-start-app.sh
+```
+### venv
+* lightweight “virtual environments”, each with their own independent set of Python packages
+* install requirements
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 ```
 
 ## AWS
