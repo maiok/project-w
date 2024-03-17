@@ -15,7 +15,7 @@ chmod +x start-app-local.sh
     ```
     in case you choose `Ubuntu` os then
     ```bash
-    ssh ubuntu@pubic_ip
+    ssh -i PEM_FILE ubuntu@pubic_ip
     ```
 
 #### Install Packages
